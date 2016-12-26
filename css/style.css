@@ -41,13 +41,13 @@ html, body {
 .img-home{
 padding-bottom: 20%;
 margin-top:-5%;
-  background-image: url("../imagens/campus_uff.jpg");
+  background-image: url("campus_uff.jpg");
   background-repeat:no-repeat;
   background-size: 100% 100%;
   
 }
 .transparente{
-  background-image: url("../imagens/fundo_transparente.png");
+  background-image: url("fundo_transparente.png");
   margin-top:10%;
   margin-left:22%;  
   margin-right:22%;
