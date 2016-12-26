@@ -1,0 +1,76 @@
+<% @aux=get_idioma() %>
+<% @idioma=@aux.idioma %>
+<p id="notice"><%= notice %></p>
+<div class="container-fluid cont-estatico">
+    <div class="container-fluid ">
+      <% if @idioma==1 %>
+        <h1>Final Results</h1>
+        <% else if @idioma==2 %>
+        <h1>Espanhol - Trabalhos finais</h1>
+              <% else %>
+                <h1>Trabalhos Finais</h1>
+        <% end %>
+      <% end %>
+
+        <table class="table table-responsive table-bordered table-hover">
+<% if logged_in? %>
+    <thead>
+    <tr>
+      <% if @idioma==1 %>
+                  <th>Text</th>
+      <% else if @idioma==2 %>
+                  <th> Espanhol - Texto </th>   
+      <% else %>
+                  <th>Texto</th>
+      <% end %>
+      <% end %>
+              <th>Link</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+<% end %>
+        
+          <tbody>
+            <% @finais.each do |finai| %>
+
+            <% if logged_in? %>
+              <tr>
+                <td><%= finai.texto %></td><br>
+            <% if finai.idioma==1 %>
+            <td>Ingles - Para consultas, clique <a href = 'http://www.bdtd.ndc.uff.br'>here.</a></td>
+            <% else if finai.idioma == 2 %>
+            <td>Espanhol - Para consultas, clique <a href = 'http://www.bdtd.ndc.uff.br'>aqui em espanhol</a></td>
+        		<% else %>
+        		<td>Para consultas, clique <a href = 'http://www.bdtd.ndc.uff.br'>aqui.</a>
+            <% end %>
+            <% end %>
+            <td><%= link_to 'Show', finai %></td>
+                <td><%= link_to 'Edit', edit_finai_path(finai) %></td>
+                <td><%= link_to 'Destroy', finai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        		<% else if finai.idioma==@idioma %>
+              <tr>
+                <td><%= finai.texto %></td><br>
+            <% if finai.idioma==1 %>
+            <td>Ingles - Para consultas, clique <a href = 'http://www.bdtd.ndc.uff.br'>here.</a></td>
+            <% else if finai.idioma == 2 %>
+            <td>Espanhol - Para consultas, clique <a href = 'http://www.bdtd.ndc.uff.br'>aqui em espanhol</a></td>
+        		<% else %>
+        		<td>Para consultas, clique <a href = 'http://www.bdtd.ndc.uff.br'>aqui.</a>
+        <% end %>
+        <% end %>
+        		<% end %>
+        		<% end %>
+            <% end %>
+          </tbody>
+        </table>
+        
+        <br>
+        
+        		<% if logged_in? %>
+        		<%= link_to 'Incluir novos Trabalhos Finais', new_finai_path %>
+        		<% end %>
+    </div>
+  </div>  
+
+
+
