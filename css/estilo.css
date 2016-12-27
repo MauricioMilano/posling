@@ -21,6 +21,9 @@ html, body {
   max-width:100%;
   
 }
+.row{
+  text-align: justify !important;
+}
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
@@ -41,10 +44,12 @@ html, body {
 .site-footer p{
     color:white;
 }
-
+.p-container{padding: 50px;height: 100%;width: 100%;background-color: white;}
+.p-container h1{border-bottom: 1px solid #f5f5f5;padding-bottom: 10px;color:black;}
 /*aqui está o css do calendario e matricula*/
 .container-img{height: 100%;}
-.p-container{padding: 50px;height: 100%;width: 100%;background-color: white;}
+
+
 /*Aqui começa o layout da pagina Home*/
 .img-home{
 padding-bottom: 20%;
@@ -226,11 +231,16 @@ padding-bottom: 35px;
 .cont-estatico{
   width: 90%;
   background-color: white;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
 }
 /*Aqui termina o quem somos*/
 
 #ingles{
   display: none;
+}
+@media(min-width:1024px){
+  .cont-estatico{
+    width: 70%;
+  }
 }
 
